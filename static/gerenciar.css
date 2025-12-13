@@ -1,0 +1,57 @@
+body{
+    background-color: #bbdefb;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.topo {
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    color: #37474f;
+    font-weight: bold;
+}
+
+.form {
+    background-color: #fff9c4;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: #424242;
+}
+
+.form input, form select, form button {
+    width: 95%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form button {
+    font-family: 'Patrick Hand', cursive;
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.form button:hover {
+    background-color: #1e88e5;
+}
+
+.botao-voltar{
+    background-color: #ef5350;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao-voltar:hover{
+    background-color: #e53935;
+}
+
+.mensagem{
+    text-align: center;
+}

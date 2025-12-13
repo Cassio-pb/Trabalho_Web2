@@ -1,0 +1,25 @@
+body{
+    background-color: #bbdefb;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.topo {
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    padding: 20px;
+    color: #37474f;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.botao-admin{
+    background-color: #ef5350;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao-admin{
+    background-color: #e53935;
+}

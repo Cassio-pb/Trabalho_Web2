@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pedidos dos Clientes</title>
+    <link rel="stylesheet" href="../static/gerenciarPedidos.css">
+</head>
+
+<body>
+
+    <div class="botao">
+        <a href="/homepage" class="botao-voltar">Voltar para Homepage Admin</a>
+    </div>
+
+    <div class="topo">
+        <h1>Pedidos dos Clientes</h1>
+    </div>
+
+
+    <div class="tabela">
+        {% if pedidos %}
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Hambúrguer</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário (R$)</th>
+                    <th>Valor Total (R$)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for pedido in pedidos %}
+                <tr>
+                    <td>{{ pedido.nome }}</td>
+                    <td>{{ pedido.hamburguer }}</td>
+                    <td>{{ pedido.quantidade }}</td>
+                    <td>{{ "%.2f"|format(pedido.preco_unitario) }}</td>
+                    <td>{{ "%.2f"|format(pedido.total) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="mensagem">
+        {% else %}
+        <p>Nenhum pedido feito ainda.</p>
+    </div>
+
+
+    {% endif %}
+
+</body>
+</html>

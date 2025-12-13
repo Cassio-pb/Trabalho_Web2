@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Hamburgueres</title>
+    <link rel="stylesheet" href="../static/gerenciar.css">
+
+</head>
+
+<body>
+
+    <div class="botao">
+        <a href="/homepage" class="botao-voltar">Voltar</a>
+    </div>
+
+    <div class="topo">
+        <h2>Adicionar Hamburguer</h2>
+    </div>
+
+
+    <form method="POST" action="/gerenciar" class="form">
+        <input type="text" name="nome" placeholder="Nome do hamburguer" required><br>
+        <input type="text" name="ingredientes" placeholder="Ingredientes separados por vírgula" required><br>
+        <input type="number" name="preco" placeholder="Preço (ex: 15.50)" step="0.01" min="0" required><br>
+        <button type="submit" name="adicionar">Adicionar</button>
+    </form>
+
+    <div class="topo">
+        <h2>Remover Hamburguer</h2>
+    </div>
+
+    <form method="POST" action="/gerenciar" class="form">
+        <input type="text" name="nome" placeholder="Nome do hamburguer" required><br>
+        <button type="submit" name="remover">Remover</button>
+    </form>
+
+    <div class="topo">
+        <h2>Lista de Hamburgueres</h2>
+    </div>
+
+    <div class="mensagem">
+
+        {% for h in hamburgueres %}
+            <li>{{ h.nome }} — {{ h.ingredientes }} — R$ {{ "%.2f"|format(h.preco) }}</li>
+        {% else %}
+
+            <li>Não há hambúrgueres cadastrados.</li>
+        {% endfor %}
+
+    </div>
+
+
+</body>
+</html>

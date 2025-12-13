@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedido Confirmado</title>
+    <link rel="stylesheet" href="../static/pedidoConfirmado.css">
+
+</head>
+
+<body>
+
+    <div class="botao">
+        <a href="/" class="botao-voltar">Voltar para o início</a>
+    </div>
+
+    <div class="topo">
+        <h1>Pedido Confirmado!</h1>
+    </div>
+
+    <div class="mensagem">
+
+        <p>Obrigado, {{ pedido.nome }}!</p>
+        <p>Você pediu {{ pedido.quantidade }}x {{ pedido.hamburguer }}.</p>
+        <p>Preço unitário: R$ {{ "%.2f"|format(pedido.preco_unitario) }}</p>
+        <p>Valor total: R$ {{ "%.2f"|format(pedido.total) }}</p>
+
+        <p>Seu pedido foi enviado com sucesso. Em breve será preparado!</p>
+
+    </div>
+
+</body>
+</html>

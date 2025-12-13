@@ -1,0 +1,29 @@
+body{
+    background-color: #bbdefb;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.topo {
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    padding: 20px;
+    color: #37474f;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.mensagem{
+    text-align: center;
+}
+
+.botao-voltar{
+    background-color: #ef5350;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao-voltar:hover{
+    background-color: #e53935;
+}
