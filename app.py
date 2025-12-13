@@ -1,11 +1,12 @@
 from flask import *
-from dao.banco import init_db, Session
+from dao.banco import init_db, SessionLocal
 from dao.usuarioDAO import *
+from dao.hamburguerDAO import *
 
 app = Flask(__name__)
 app.secret_key = 'pedrolindo'
 
-hamburgueres = []
+hamburgueres = listar_hambuerguer()
 pedidos = []
 
 usuarios = None
@@ -14,11 +15,11 @@ init_db()
 
 @app.before_request
 def pegar_sessao():
-    g.session = Session()
+    g.session = SessionLocal()
 
 @app.teardown_appcontext
 def encerrar_sessao(exception=None):
-    Session.remove()
+    SessionLocal.remove()
 
 @app.route('/')
 def index():
@@ -40,7 +41,7 @@ def fazer_login():
     if usuario:
         print(usuario)
         session['login'] = login
-        return render_template('pedidos.html')
+        return render_template('pedidos.html', hamburgueres = listar_hambuerguer() )
     else:
         #aqui o usuario digitou o login ou senha errado
         msg = 'Usuário ou senha inválidos'
@@ -148,17 +149,18 @@ def gerenciar():
                 preco = float(request.form['preco'])
             except ValueError:
                 preco = 0.0
-            hamburgueres.append({'nome': nome, 'ingredientes': ingredientes, 'preco': preco})
+            
+            resultado = criar_hamburguer(nome,ingredientes,preco)
+            print(f'resultado:{resultado}')
         elif 'remover' in request.form:
             nome = request.form['nome']
-            encontrado = False
-            for h in hamburgueres:
-                if h['nome'] == nome:
-                    hamburgueres.remove(h)
-                    encontrado = True
-                    break
-            if not encontrado:
-                mensagem = 'Hamburguer não encontrado.'
+
+            resul = remover_hamburguer(nome)
+            if resul:
+                print(f'hamburguer removido')
+    hamburgueres = listar_hambuerguer()
+    print(f'lista de hamburgueres:{hamburgueres}')
+
     return render_template('gerenciar.html', hamburgueres=hamburgueres, mensagem=mensagem)
 
 if __name__ == '__main__':

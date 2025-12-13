@@ -23,7 +23,7 @@
 
             <select name="hamburguer" required>
                 {% for h in hamburgueres %}
-                    <option value="{{ h.nome }}">{{ h.nome }} - {{ h.ingredientes }} - R$ {{ "%.2f"|format(h.preco) }}</option>
+                    <option value="{{ h.nome }}">{{ h.nome }} - {{ h.ingredientes }} - R$ {{ "%.2f"|format(h.Valor) }}</option>
                 {% else %}
                     <option disabled>Nenhum hamburguer disponível</option>
                 {% endfor %}

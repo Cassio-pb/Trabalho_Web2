@@ -41,7 +41,7 @@
     <div class="mensagem">
 
         {% for h in hamburgueres %}
-            <li>{{ h.nome }} — {{ h.ingredientes }} — R$ {{ "%.2f"|format(h.preco) }}</li>
+            <li>{{ h.nome }} — {{ h.ingredientes }} — R$ {{ "%.2f"|format(h.Valor) }}</li>
         {% else %}
 
             <li>Não há hambúrgueres cadastrados.</li>
