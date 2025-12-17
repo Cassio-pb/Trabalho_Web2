@@ -2,31 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> HomePage</title>
+    <title> Principal </title>
     <link rel="stylesheet" href="../static/index.css">
 </head>
 <body>
-
-    <div class="botao">
-         <a href="/login" class="botao-login"> Login Admin</a>
-    </div>
 
     <h1 class="topo"> Bem-vindo ao Siri Cascudo</h1>
 
     <div class="form">
         <form action="/fazerlogin" method="post">
-            <input type="text" name="loginusuario" placeholder="digite seu login">
+            <input type="text" name="loginusuario" placeholder="digite seu login" required>
             <br>
-            <input type="password" name="senhausuario" placeholder="digite sua senha">
+            <input type="password" name="senhausuario" placeholder="digite sua senha"  required>
             <br>
             <button type="submit" >Fazer login</button>
 
         </form>
 
-        <p >
+        <p>
             <a>Não está cadastrado?</a>
             <a class="cadastro" href="/cadastrar">Cadastre-se</a>
+            <br><br>
+            <a>Já é admin da página? </a>
+            <a class="cadastro" href="/login"> Clique aqui</a>
         </p>
+
 
 
     </div>

@@ -41,15 +41,3 @@ body{
 .form button:hover {
     background-color: #1e88e5;
 }
-
-.botao-login{
-    background-color: #ef5350;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.botao-login:hover{
-    background-color: #e53935;
-}

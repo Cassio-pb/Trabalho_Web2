@@ -4,7 +4,7 @@ from dao.usuarioDAO import *
 from dao.hamburguerDAO import *
 
 app = Flask(__name__)
-app.secret_key = 'pedrolindo'
+app.secret_key = 'cassinepedrin'
 
 hamburgueres = listar_hambuerguer()
 pedidos = []
