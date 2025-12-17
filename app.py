@@ -82,8 +82,8 @@ def fazerPedido():
     # Busca o preco do hamburguer selecionado
     preco_unitario = 0
     for h in hamburgueres:
-        if h['nome'] == hamburguer_nome:
-            preco_unitario = h['preco']
+        if h.nome == hamburguer_nome:
+            preco_unitario = h.Valor
             break
 
     total = quantidade * preco_unitario
